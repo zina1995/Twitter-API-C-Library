@@ -1,11 +1,11 @@
 # C++ Twitter API Library
 
-A C++17 library for access to Twitter's Standard v1.1 REST and Streaming APIs.
+# C++ library for access to Twitter's Standard v1.1 REST and Streaming APIs.
 
 This library is **not** production ready! It was built in order to learn about
 networking and Web APIs.
 
-## Example
+# Example
 
 ```cpp
 #include <iostream>
@@ -21,7 +21,7 @@ int main()
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
 
     // Returns JSON response from twitter.
-    std::cout << get_account_settings(keys) << std::endl;
+    std::cout << get_account_settings(“keys”) << std::end;
 
     // Update account's status.
     update_status(keys, {"Hello, Twitter!"});
@@ -29,10 +29,10 @@ int main()
     // Add a reply to an existing Tweet.
     update_status(keys, [] {
         auto p                  = Update_status_parameters{};
-        p.message               = "A Reply Tweet";
+        p.message               = {"A Reply,Tweet!"});
         p.in_reply_to_status_id = 1405048013278519299;
         return p;
-    }());
+    }();
 
     // Streaming API
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
@@ -62,10 +62,10 @@ int main()
     network::wait();
 
     return 0;
-}
-```
+};
 
-## Build
+
+# Build
 
 CMake is the supported build generator, it generates the `twitterlib` library
 target that can be linked against.
@@ -75,7 +75,7 @@ Other generated target are `twitterlib.demos` and `twitterlib.tests`.
 It is recommended to use this library as a git submodule in your project, for
 easier version control, though there is an installation target generated.
 
-## Usage
+# Usage
 
 [Register](https://developer.twitter.com/en/apply/user.html) for a Twitter
 Developer Account.  Create a new application via the [Twitter App
